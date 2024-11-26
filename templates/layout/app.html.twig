@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.88.1">
-  <title>Lecture</title>
+  <title>Blog</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,23 +58,63 @@
 <body>
 
 <header>
+  {% if not editmode %}
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      {% set navStartNode = document.getProperty('navigation_root') %}
+
+      {% if not navStartNode is instanceof('\\Pimcore\\Model\\Document\\Page') %}
+        {% if pimcore_site_is_request() %}
+          {% set site = pimcore_site_current() %}
+          {% set navStartNode = site.getRootDocument() %}
+        {% else %}
+          {% set navStartNode = pimcore_document(1) %}
+        {% endif %}
+      {% endif %}
+
+      {% set mainNavigation = pimcore_build_nav({active: document, root: navStartNode}) %}
+
+      {% set menuRenderer = pimcore_nav_renderer('menu') %}
+
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Lecture</a>
+            <a class="navbar-brand" href="{{ navStartNode }}">Blog</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link {{ document.id is same as(navStartNode.id) ? 'active' : '' }}"
+                           aria-current="page" href="{{ navStartNode }}">{{ navStartNode.title }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="blog-listing.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
-                    </li>
+                    {% for page in mainNavigation %}
+                      {% if page.isVisible() and menuRender.accept(page) %}
+                        {% set hasChildren = page.hasPages() %}
+
+                        {% if not hasChildren %}
+                          <li class="nav-item">
+                            <a class="nav-link {{ document.id is same as(page.id) ? 'active' : '' }}"
+                               aria-current="page" href="{{ page.getHref() }}">{{ page.getLabel()|trans }}</a>
+                          </li>
+                        {% else %}
+                          <li class="nav-item dropdown">
+                          <li class="nav-item">
+                            <a class="nav-link dropdown-toggle {{ document.id is same as(navStartNode.id) ? 'active' : '' }}"
+                               aria-current="page" href="{{ navStartNode }}" id="navbarDropdown_{{ page.id }}"
+                            role="button" data-bs-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                              {{ navStartNode.title }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown_{{ page.id }}">
+                              {% for child in page.getPages() %}
+                                {% if child.isVisible() and menuRender.accept(child) %}
+                                  <li><a class="dropdown-item" href="{{ child.getHref() }}">{{ child.getLabel()|trans }}</a></li>
+                                {% endif %}
+                              {% endfor %}
+                            </ul>
+                          </li>
+                        {% endif %}
+                      {% endif %}
+                    {% endfor %}
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search blog posts" aria-label="Search blog posts">
@@ -83,6 +123,7 @@
             </div>
         </div>
     </nav>
+  {% endif %}
 </header>
 
 <main class="d-flex flex-column min-vh-100">
