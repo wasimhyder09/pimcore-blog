@@ -87,7 +87,7 @@
                            aria-current="page" href="{{ navStartNode }}">{{ navStartNode.title }}</a>
                     </li>
                     {% for page in mainNavigation %}
-                      {% if page.isVisible() and menuRender.accept(page) %}
+                      {% if page.isVisible() and menuRenderer.accept(page) %}
                         {% set hasChildren = page.hasPages() %}
 
                         {% if not hasChildren %}
