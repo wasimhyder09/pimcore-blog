@@ -59,7 +59,9 @@ services:
         resource: '../src/Command/*'
         tags: [ 'console.command' ]
 
-
+    #Twig Extensions
+    App\Twig\Extension\UniqueIdExtension:
+        tags: ['twig.extension']
 
     # Example custom templating helper
     # App\Templating\Helper\Example:
