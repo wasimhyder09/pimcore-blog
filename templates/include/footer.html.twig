@@ -4,13 +4,22 @@
         <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
             <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
         </a>
-        <span class="text-muted">&copy; 2021 Company, Inc</span>
+        <span class="text-muted">{{ pimcore_input('copyright') }}</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-lg fa-twitter-square"></i></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-lg fa-facebook-square"></i></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class="fab fa-lg fa-instagram"></i></a></li>
+      {% for i in pimcore_block('socials').iterator %}
+        {% if editmode %}
+          {{ pimcore_link('socialUrl') }}
+        {% else %}
+          {% set socialUrl = pimcore_link('socialUrl') %}
+          <li class="ms-3">
+            <a href="{{ socialUrl.getHref() }}" class="{{ socialUrl.getClass() }}">
+              {{ socialUrl.getText()|raw }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
     </ul>
 </footer>
 <!-- FOOTER End -->
