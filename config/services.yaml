@@ -1,6 +1,8 @@
 parameters:
     secret: wDXLjo9rGjB6dRJvoM9J7hglabQLlDBl6OYCmnzraGw=
 
+    site_protocol: '%env(SITE_PROTOCOL)%'
+
     # customize the full path to external executables
     # normally they are auto-detected by `which program` or auto-discovered in the configured path in
     # System Settings -> General -> Additional $PATH variable
@@ -30,6 +32,7 @@ parameters:
     #pimcore_executable_dot: /usr/bin/dot
 
 services:
+    Symfony\Component\DependencyInjection\ContainerInterface: '@service_container'
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services
@@ -62,6 +65,10 @@ services:
     #Twig Extensions
     App\Twig\Extension\UniqueIdExtension:
         tags: ['twig.extension']
+
+    #Link generator
+    App\Website\LinkGenerator\BlogPostLinkGenerator:
+        public: true
 
     # Example custom templating helper
     # App\Templating\Helper\Example:
