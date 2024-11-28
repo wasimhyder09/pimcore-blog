@@ -40,13 +40,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'useTraits' => '',
    'listingUseTraits' => '',
    'encryption' => false,
-   'encryptedTables' => 
+   'encryptedTables' =>
   array (
   ),
    'allowInherit' => false,
    'allowVariants' => false,
    'showVariants' => false,
-   'layoutDefinitions' => 
+   'layoutDefinitions' =>
   \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
      'name' => 'pimcore_root',
      'type' => NULL,
@@ -58,9 +58,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'collapsed' => false,
      'bodyStyle' => NULL,
      'datatype' => 'layout',
-     'children' => 
+     'children' =>
     array (
-      0 => 
+      0 =>
       \Pimcore\Model\DataObject\ClassDefinition\Layout\Tabpanel::__set_state(array(
          'name' => 'Layout',
          'type' => NULL,
@@ -72,9 +72,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'collapsed' => false,
          'bodyStyle' => '',
          'datatype' => 'layout',
-         'children' => 
+         'children' =>
         array (
-          0 => 
+          0 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Region::__set_state(array(
              'name' => 'General',
              'type' => NULL,
@@ -86,9 +86,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
                  'name' => 'General',
                  'type' => NULL,
@@ -100,9 +100,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                      'name' => 'title',
                      'title' => 'Title',
@@ -118,13 +118,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'defaultValue' => NULL,
                      'columnLength' => 190,
                      'regex' => '',
-                     'regexFlags' => 
+                     'regexFlags' =>
                     array (
                     ),
                      'unique' => false,
@@ -132,7 +132,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'width' => 500,
                      'defaultValueGenerator' => '',
                   )),
-                  1 => 
+                  1 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
                      'name' => 'shortDescription',
                      'title' => 'Short Description',
@@ -148,7 +148,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'maxLength' => NULL,
@@ -157,7 +157,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'height' => 100,
                      'width' => 500,
                   )),
-                  2 => 
+                  2 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
                      'name' => 'content',
                      'title' => 'Content',
@@ -173,7 +173,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'toolbarConfig' => '',
@@ -182,7 +182,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'height' => '',
                      'width' => '',
                   )),
-                  3 => 
+                  3 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Date::__set_state(array(
                      'name' => 'date',
                      'title' => 'Date',
@@ -198,7 +198,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'defaultValue' => NULL,
@@ -206,7 +206,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'columnType' => 'bigint(20)',
                      'defaultValueGenerator' => '',
                   )),
-                  4 => 
+                  4 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\User::__set_state(array(
                      'name' => 'postedBy',
                      'title' => 'Posted By',
@@ -222,7 +222,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'options' => NULL,
@@ -238,7 +238,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'panel',
@@ -248,7 +248,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'labelWidth' => 100,
                  'labelAlign' => 'left',
               )),
-              1 => 
+              1 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
                  'name' => 'Media, Tags & Categories',
                  'type' => NULL,
@@ -260,9 +260,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
                      'name' => 'image',
                      'title' => 'Image',
@@ -278,14 +278,14 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'uploadPath' => '/Blogs Posts',
                      'width' => '',
                      'height' => '',
                   )),
-                  1 => 
+                  1 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                      'name' => 'tags',
                      'title' => 'Tags',
@@ -301,12 +301,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
-                     'classes' => 
+                     'classes' =>
                     array (
-                      0 => 
+                      0 =>
                       array (
                         'classes' => 'BlogPostTag',
                       ),
@@ -319,13 +319,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'allowToClearRelation' => true,
                      'optimizedAdminLoading' => false,
                      'enableTextSelection' => false,
-                     'visibleFieldDefinitions' => 
+                     'visibleFieldDefinitions' =>
                     array (
                     ),
                      'width' => '',
                      'height' => '',
                   )),
-                  2 => 
+                  2 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                      'name' => 'categories',
                      'title' => 'Categories',
@@ -341,12 +341,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
-                     'classes' => 
+                     'classes' =>
                     array (
-                      0 => 
+                      0 =>
                       array (
                         'classes' => 'BlogPostCategory',
                       ),
@@ -359,7 +359,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'allowToClearRelation' => true,
                      'optimizedAdminLoading' => false,
                      'enableTextSelection' => false,
-                     'visibleFieldDefinitions' => 
+                     'visibleFieldDefinitions' =>
                     array (
                     ),
                      'width' => '',
@@ -367,7 +367,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'panel',
@@ -379,13 +379,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'region',
              'icon' => '',
           )),
-          1 => 
+          1 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Region::__set_state(array(
              'name' => 'SEO',
              'type' => NULL,
@@ -397,9 +397,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
                  'name' => 'SEO',
                  'type' => NULL,
@@ -411,9 +411,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                      'name' => 'seoTitle',
                      'title' => 'Seo Title',
@@ -429,13 +429,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'defaultValue' => NULL,
                      'columnLength' => 190,
                      'regex' => '',
-                     'regexFlags' => 
+                     'regexFlags' =>
                     array (
                     ),
                      'unique' => false,
@@ -443,7 +443,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'width' => 500,
                      'defaultValueGenerator' => '',
                   )),
-                  1 => 
+                  1 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
                      'name' => 'seoDescription',
                      'title' => 'Seo Description',
@@ -459,7 +459,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'maxLength' => NULL,
@@ -468,7 +468,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'height' => 100,
                      'width' => 500,
                   )),
-                  2 => 
+                  2 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                      'name' => 'cannocialUrl',
                      'title' => 'Cannocial Url',
@@ -484,13 +484,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'defaultValue' => NULL,
                      'columnLength' => 190,
                      'regex' => '',
-                     'regexFlags' => 
+                     'regexFlags' =>
                     array (
                     ),
                      'unique' => false,
@@ -498,7 +498,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'width' => 500,
                      'defaultValueGenerator' => '',
                   )),
-                  3 => 
+                  3 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                      'name' => 'ogUrl',
                      'title' => 'OG URL',
@@ -514,13 +514,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'defaultValue' => NULL,
                      'columnLength' => 190,
                      'regex' => '',
-                     'regexFlags' => 
+                     'regexFlags' =>
                     array (
                     ),
                      'unique' => false,
@@ -528,7 +528,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'width' => 500,
                      'defaultValueGenerator' => '',
                   )),
-                  4 => 
+                  4 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                      'name' => 'ogLocale',
                      'title' => 'OG Locale',
@@ -544,13 +544,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'defaultValue' => NULL,
                      'columnLength' => 190,
                      'regex' => '',
-                     'regexFlags' => 
+                     'regexFlags' =>
                     array (
                     ),
                      'unique' => false,
@@ -560,7 +560,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'panel',
@@ -570,7 +570,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'labelWidth' => 100,
                  'labelAlign' => 'left',
               )),
-              1 => 
+              1 =>
               \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
                  'name' => 'Media',
                  'type' => NULL,
@@ -582,9 +582,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'collapsed' => false,
                  'bodyStyle' => '',
                  'datatype' => 'layout',
-                 'children' => 
+                 'children' =>
                 array (
-                  0 => 
+                  0 =>
                   \Pimcore\Model\DataObject\ClassDefinition\Data\Hotspotimage::__set_state(array(
                      'name' => 'seoImage',
                      'title' => 'SEO Image',
@@ -600,7 +600,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'invisible' => false,
                      'visibleGridView' => false,
                      'visibleSearch' => false,
-                     'blockedVarsForExport' => 
+                     'blockedVarsForExport' =>
                     array (
                     ),
                      'predefinedDataTemplates' => '',
@@ -610,7 +610,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                   )),
                 ),
                  'locked' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'fieldtype' => 'panel',
@@ -622,13 +622,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'region',
              'icon' => '',
           )),
-          2 => 
+          2 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'Related Posts',
              'type' => NULL,
@@ -640,9 +640,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToManyObjectRelation::__set_state(array(
                  'name' => 'relatedBlogPosts',
                  'title' => 'Related Blog Posts',
@@ -658,12 +658,12 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
-                 'classes' => 
+                 'classes' =>
                 array (
-                  0 => 
+                  0 =>
                   array (
                     'classes' => 'BlogPost',
                   ),
@@ -676,7 +676,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'allowToClearRelation' => true,
                  'optimizedAdminLoading' => false,
                  'enableTextSelection' => false,
-                 'visibleFieldDefinitions' => 
+                 'visibleFieldDefinitions' =>
                 array (
                 ),
                  'width' => '',
@@ -684,7 +684,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -694,7 +694,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'labelWidth' => 100,
              'labelAlign' => 'left',
           )),
-          3 => 
+          3 =>
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
              'name' => 'About & Ad',
              'type' => NULL,
@@ -706,9 +706,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'bodyStyle' => '',
              'datatype' => 'layout',
-             'children' => 
+             'children' =>
             array (
-              0 => 
+              0 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
                  'name' => 'about',
                  'title' => 'About',
@@ -724,7 +724,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'maxLength' => NULL,
@@ -733,7 +733,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'height' => 100,
                  'width' => 500,
               )),
-              1 => 
+              1 =>
               \Pimcore\Model\DataObject\ClassDefinition\Data\Wysiwyg::__set_state(array(
                  'name' => 'ad',
                  'title' => 'Ad',
@@ -749,7 +749,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'invisible' => false,
                  'visibleGridView' => false,
                  'visibleSearch' => false,
-                 'blockedVarsForExport' => 
+                 'blockedVarsForExport' =>
                 array (
                 ),
                  'toolbarConfig' => '',
@@ -760,7 +760,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
               )),
             ),
              'locked' => false,
-             'blockedVarsForExport' => 
+             'blockedVarsForExport' =>
             array (
             ),
              'fieldtype' => 'panel',
@@ -772,7 +772,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           )),
         ),
          'locked' => false,
-         'blockedVarsForExport' => 
+         'blockedVarsForExport' =>
         array (
         ),
          'fieldtype' => 'tabpanel',
@@ -781,7 +781,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       )),
     ),
      'locked' => false,
-     'blockedVarsForExport' => 
+     'blockedVarsForExport' =>
     array (
     ),
      'fieldtype' => 'panel',
@@ -794,15 +794,15 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'icon' => '',
    'group' => '',
    'showAppLoggerTab' => false,
-   'linkGeneratorReference' => '@App\\\\Website\\LinkGenerator\\BlogPostLinkGenerator',
+   'linkGeneratorReference' => '@App\\Website\\LinkGenerator\\BlogPostLinkGenerator',
    'previewGeneratorReference' => '',
-   'compositeIndices' => 
+   'compositeIndices' =>
   array (
   ),
    'showFieldLookup' => false,
-   'propertyVisibility' => 
+   'propertyVisibility' =>
   array (
-    'grid' => 
+    'grid' =>
     array (
       'id' => true,
       'key' => false,
@@ -811,7 +811,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       'modificationDate' => true,
       'creationDate' => true,
     ),
-    'search' => 
+    'search' =>
     array (
       'id' => true,
       'key' => false,
@@ -822,16 +822,16 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
     ),
   ),
    'enableGridLocking' => false,
-   'deletedDataComponents' => 
+   'deletedDataComponents' =>
   array (
   ),
-   'blockedVarsForExport' => 
+   'blockedVarsForExport' =>
   array (
   ),
-   'fieldDefinitionsCache' => 
+   'fieldDefinitionsCache' =>
   array (
   ),
-   'activeDispatchingEvents' => 
+   'activeDispatchingEvents' =>
   array (
   ),
 ));
