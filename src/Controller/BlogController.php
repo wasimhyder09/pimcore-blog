@@ -6,6 +6,7 @@ use Pimcore\Controller\FrontendController;
 use Pimcore\Model\DataObject\BlogPost;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends FrontendController {
   /**
