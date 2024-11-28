@@ -21,7 +21,7 @@ class LatestBlogPostsDataMapper extends AbstractDataMapper {
       'shortDescription' => $this->resource->getShortDescription(),
       'posted' => $this->resource->getDate()->setTimezone('Asia/Karachi')->format('F j, Y'),
       'slug' => $linkGenerator->generate($this->resource),
-      'tags' => BlogPostTagDataMapper::list($this->resource->getTags())->all($request);
+      'tags' => BlogPostTagDataMapper::list($this->resource->getTags())->all($request)
     ];
   }
 }
