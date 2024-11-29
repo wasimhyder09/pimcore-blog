@@ -16,7 +16,7 @@ class BlogPostListingQueryBuilder extends AbstractListingQueryBuilder {
   protected function addQueryBefore() {
     $this->query->distinct();
 
-    $this->query->innerJoin(
+    $this->query->leftJoin(
       'object_BlogPost',
       'object_relations_BlogPost',
       'BlogPostRelations',

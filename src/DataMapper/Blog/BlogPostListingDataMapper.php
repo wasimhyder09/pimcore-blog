@@ -15,7 +15,7 @@ class BlogPostListingDataMapper extends AbstractDataMapper {
 
     return [
       'id' => $this->resource->getId(),
-      'image' => $this->resource->getImage() ?->getImage(),
+//      'image' => $this->resource->getImage() ?->getImage(),
       'title' => $this->resource->getTitle(),
       'shortDescription' => $this->resource->getShortDescription(),
       'posted' => $this->resource->getDate()->setTimezone('Asia/Karachi')->format('F j, Y'),
