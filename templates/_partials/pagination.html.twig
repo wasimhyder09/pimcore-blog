@@ -1,22 +1,48 @@
 <!-- PAGINATION START -->
-<div class="row">
-  <div class="col-3">
-    Showing 1 to 9 of 33 results
+{% if paginator is defined %}
+  <div class="row">
+    <div class="col-3">
+      Showing {{ paginator.firstItemNumber}} to {{ paginator.lastItemNumber}} of {{ paginator.totalCount }} results
+    </div>
+    <div class="col-6">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          {% if paginator.previous is defined %}
+            <li class="page-item">
+              <a class="page-link prev"
+                 href="{{ pimcore_url({'page': paginator.previous}) }}"
+                 tabindex="-1"
+                 aria-disabled="true">Previous</a>
+            </li>
+          {% endif %}
+
+          {% for page in paginator.pagesInRange %}
+            {% if paginator.current == page %}
+              <li class="page-item active">
+              <span class="page-link">
+                {{ page }}
+              </span>
+                <span class="sr-only">(current)</span>
+              </li>
+            {% elseif page > 0 %}
+              <li class="page-item">
+                <a class="page-link" href="{{ pimcore_url({'page': page}) }}">
+                  {{ page }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          {% if paginator.next is defined %}
+            <li class="page-item">
+              <a class="page-link next"
+                 href="{{ pimcore_url({'page': paginator.next}) }}"
+                 tabindex="-1"
+                 aria-disabled="true">Next</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
   </div>
-  <div class="col-6">
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
+{% endif %}
 <!-- PAGINATION END -->

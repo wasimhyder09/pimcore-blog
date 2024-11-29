@@ -17,13 +17,13 @@ class BlogPostListingQueryBuilder extends AbstractListingQueryBuilder {
     $this->query->distinct();
 
     $this->query->innerJoin(
-      'object_blogPost',
-      'object_relations_blogPost',
+      'object_BlogPost',
+      'object_relations_BlogPost',
       'BlogPostRelations',
-      'object_blogPost.oo_id = BlogPostRelations.src_id'
+      'object_BlogPost.oo_id = BlogPostRelations.src_id'
     );
 
-    $this->query->orderBy('object_blogPost.date', 'DESC');
+    $this->query->orderBy('object_BlogPost.date', 'DESC');
   }
 
   public function query(string $term) {
@@ -33,14 +33,14 @@ class BlogPostListingQueryBuilder extends AbstractListingQueryBuilder {
     }
     $this->query->innerJoin(
       'BlogPostRelations',
-      'object_blogPostTag',
+      'object_BlogPostTag',
       'BlogPostTag',
       'BlogPostRelations.dest_id = BlogPostTag.oo_id AND
         BlogPostRelations.type="object" AND
         BlogPostRelations.field_name = "tags"
       '
     );
-    $this->query->where("object_blogPostTag.title LIKE '%{$term}%'");
+    $this->query->where("object_BlogPostTag.title LIKE '%{$term}%'");
 
     $this->query->orWhere($this->query->expr()->or(
       $this->query->expr()->like("BlogPostTag.name", "'%{$term}%'")
@@ -64,6 +64,6 @@ class BlogPostListingQueryBuilder extends AbstractListingQueryBuilder {
   }
 
   public function sortByDate(string $order) {
-    $this->query->orderBy('object_blogPost.date', $order);
+    $this->query->orderBy('object_BlogPost.date', $order);
   }
 }

@@ -26,14 +26,14 @@ class BlogController extends FrontendController {
    * @param Request $request
    * @return array
    */
-  public function indexAction(Request $request, PaginatorInterface $paginator) {
+  public function indexAction(Request $request, PaginatorInterface $paginator): Response {
     $paginator = $this->blogPostRepository->paginate($request, $paginator);
     $blogPostCategories = $this->blogPostCategoryRepository->all();
-    return[
+    return $this->render('blog/index.html.twig', [
       'paginator' => (new PaginatorDataMapper($paginator))->toArray($request),
       'blog_posts' => BlogPostListingDataMapper::list([...$paginator->getItems()])->all($request),
       'blog_post_categories' => BlogPostCategoryDataMapper::list($blogPostCategories)->all($request),
-    ];
+    ]);
   }
 
   /**
