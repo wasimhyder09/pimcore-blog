@@ -70,6 +70,10 @@ services:
     App\Website\LinkGenerator\BlogPostLinkGenerator:
         public: true
 
+    # Repositories
+    App\Repository\:
+        resource: '../src/Repository/*'
+
     # Example custom templating helper
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they
