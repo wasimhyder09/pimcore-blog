@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\DataMapper\Blog\BlogPostCategoryDataMapper;
 use App\DataMapper\Blog\BlogPostListingDataMapper;
+use App\DataMapper\Blog\BlogPostShowDataMapper;
 use App\DataMapper\Pagination\PaginatorDataMapper;
 use App\Repository\BlogPostCategoryRepository;
 use App\Repository\BlogPostRepository;
@@ -53,8 +54,9 @@ class BlogController extends FrontendController {
     if(empty($blogPost)) {
       throw new \Exception("Blog post not found");
     }
+
     return $this->render('blog/show.html.twig', [
-      'blog_post' => [],
+      'blog_post' => (new BlogPostShowDataMapper($blogPost))->toArray($request),
     ]);
   }
 }

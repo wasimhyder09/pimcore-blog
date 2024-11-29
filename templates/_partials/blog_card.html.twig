@@ -4,7 +4,10 @@
     <div class="col-4">
       <div class="card mb-3">
 
-        {{ (blog_post.image is defined ? blog_post.image.thumbnail('blogPostThumb').html : '') | raw }}
+        {% if blog_post.image is defined and blog_post.image %}
+          <img src="{{ blog_post.image }}" alt="{{ blog_post.title is defined ? blog_post.title : 'Image' }}" class="card-img-top">
+        {% endif %}
+
         <div class="card-body">
           <h5 class="card-title">{{ blog_post.title is defined ? blog_post.title : '' }}</h5>
           <p class="card-text">{{ blog_post.shortDescription is defined ? blog_post.shortDescription : '' }}</p>

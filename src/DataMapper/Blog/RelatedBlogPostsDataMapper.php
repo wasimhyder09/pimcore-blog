@@ -8,7 +8,7 @@ use Pimcore\Model\DataObject\BlogPost;
 /**
  * @property BlogPost $resource
  */
-class BlogPostListingDataMapper extends AbstractDataMapper {
+class RelatedBlogPostsDataMapper extends AbstractDataMapper {
   public function toArray($request): array {
 
     $linkGenerator = $this->resource->getClass()->getLinkGenerator();
@@ -17,7 +17,7 @@ class BlogPostListingDataMapper extends AbstractDataMapper {
     $imageUrl = null;
 
     if ($image instanceof \Pimcore\Model\Asset\Image) {
-      $imageUrl = $image->getFullPath();
+      $imageUrl = $image->getFullPath(); // Or use getThumbnail('thumbnail_name')->getPath()
     }
 
     return [

@@ -1,7 +1,39 @@
 {% extends 'layout/app.html.twig' %}
 
 {% block SEO %}
+  {% apply spaceless -%}
+    {% if blog_post is defined and blog_post.seo_title is not null %}
+      {% do pimcore_head_title().set(blog_post.seo_title) %}
+      {% do pimcore_head_meta().setProperty('og:title', blog_post.seo_title) %}
+      {% do pimcore_head_meta().setProperty('twitter:title', blog_post.seo_title) %}
+    {% endif %}
+
+    {% if blog_post is defined and blog_post.seo_description is not null %}
+      {% do pimcore_head_meta().setProperty('og:description', blog_post.seo_description) %}
+      {% do pimcore_head_meta().setProperty('twitter:description', blog_post.seo_description) %}
+    {% endif %}
+
+    {% if blog_post is defined and blog_post.seo_image is not null %}
+      {% do pimcore_head_meta().setProperty('og:image', app.request.getSchemeAndHttpHost() ~ blog_post.seo_image.thumbnail('blogPostOgImage').path) %}
+      {% do pimcore_head_meta().setProperty('twitter:image', app.request.getSchemeAndHttpHost() ~ blog_post.seo_image.thumbnail('blogPostOgImage').path) %}
+    {% endif %}
+
+    {% do pimcore_head_meta().setProperty('og:type', 'article') %}
+
+    {% if blog_post is defined and blog_post.og_url is not null %}
+      {% do pimcore_head_meta().setProperty('og:url', blog_post.og_url) %}
+    {% endif %}
+
+    {% if blog_post is defined and blog_post.og_locale is not null %}
+      {% do pimcore_head_meta().setProperty('og:locale', blog_post.og_locale) %}
+    {% endif %}
+
+    {% if blog_post is defined and blog_post.canonical_url is not null %}
+      <link rel="canonical" href="{{ blog_post.canonical_url }}" />
+    {% endif %}
+  {%- endapply %}
 {% endblock %}
+
 
 {% block PAGE_CSS %}
 {% endblock %}
@@ -12,141 +44,59 @@
     <div class="row g-5 mt-3">
       <div class="col-md-8">
         <article class="blog-post">
-          <h2 class="blog-post-title">Sample blog post</h2>
-          <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+          <h2 class="blog-post-title">{{ blog_post.title is defined ? blog_post.title : '' }}</h2>
+          <p class="blog-post-meta">{{ blog_post.posted is defined ? blog_post.posted : '' }}
+            by <b>{{ blog_post.posted_by is defined ? blog_post.posted_by : '' }}</b>
+          </p>
 
-          <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
+          <p>{{ blog_post.short_description is defined ? blog_post.short_description : '' }}</p>
           <hr>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <h2>Blockquotes</h2>
-          <p>This is an example blockquote in action:</p>
-          <blockquote class="blockquote">
-            <p>Quoted text goes here.</p>
-          </blockquote>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <h3>Example lists</h3>
-          <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout. This is an example unordered list:</p>
-          <ul>
-            <li>First list item</li>
-            <li>Second list item with a longer description</li>
-            <li>Third list item to close it out</li>
-          </ul>
-          <p>And this is an ordered list:</p>
-          <ol>
-            <li>First list item</li>
-            <li>Second list item with a longer description</li>
-            <li>Third list item to close it out</li>
-          </ol>
-          <p>And this is a definition list:</p>
-          <dl>
-            <dt>HyperText Markup Language (HTML)</dt>
-            <dd>The language used to describe and define the content of a Web page</dd>
-            <dt>Cascading Style Sheets (CSS)</dt>
-            <dd>Used to describe the appearance of Web content</dd>
-            <dt>JavaScript (JS)</dt>
-            <dd>The programming language used to build advanced Web sites and applications</dd>
-          </dl>
-          <h2>Inline HTML elements</h2>
-          <p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-          <ul>
-            <li><strong>To bold text</strong>, use <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
-            <li><em>To italicize text</em>, use <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
-            <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
-            <li>Citations, like <cite>— Mark Otto</cite>, should use <code class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
-            <li><del>Deleted</del> text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
-            <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li>
-          </ul>
-          <p>Most of these elements are styled by browsers with few modifications on our part.</p>
-          <h2>Heading</h2>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <h3>Sub-heading</h3>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <pre><code>Example code block</code></pre>
-          <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
-        </article>
+          {{ (blog_post.content is defined ? blog_post.content : '') | raw }}
+          </article>
         <div class="row">
           <div class="col-md-12">
             <span class="pe-2">Tags:</span>
-            <span class="badge bg-secondary">Pimcore</span>
-            <span class="badge bg-secondary">Blog</span>
-            <span class="badge bg-secondary">Example</span>
+            {% if blog_post.tags is defined and (blog_post.tags | length > 0) %}
+              {% for tag in blog_post.tags %}
+                <span class="badge bg-secondary">{{ tag.name is defined ? tag.name : '' }}</span>
+              {% endfor %}
+            {% endif %}
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="position-sticky" style="top: 2rem;">
-          <div class="p-4 mb-3 bg-light rounded">
-            <h4 class="fst-italic">About</h4>
-            <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
-          </div>
-          <div class="mb-3 bg-light rounded">
-            <img src="https://via.placeholder.com/400x600?text=400x600 Ad Placement">
-          </div>
+          {% if blog_post.about is defined and blog_post.about is not null %}
+            <div class="p-4 mb-3 bg-light rounded">
+              <h4 class="fst-italic">About</h4>
+              <p class="mb-0">{{ blog_post.about }}</p>
+            </div>
+            {% endif %}
+
+          {% if blog_post.ad is defined and blog_post.ad is not null %}
+            <div class="mb-3 bg-light rounded">
+              {{ blog_post.add | raw }}
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>
   </div>
   <!-- BLOG SINGLE END -->
-
-  <!-- BLOG CARDS START -->
-  <div class="container">
-    <div class="row">
-      <div class="col-12 p-3">
-        <hr>
-        <h3>Related posts</h3>
-      </div>
-      <div class="col-4">
-        <div class="card mb-3">
-          <img src="https://via.placeholder.com/414x227" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Blog title</h5>
-            <p class="card-text">Blog short description..</p>
-            <p class="card-text"><small class="text-muted">Posted: 3 mins ago</small></p>
-            <a href="blog-single.html" class="btn btn-primary stretched-link">Read more</a>
-            <hr>
-            <span class="pe-2">Tags:</span>
-            <span class="badge bg-secondary">Pimcore</span>
-            <span class="badge bg-secondary">Blog</span>
-            <span class="badge bg-secondary">Example</span>
-          </div>
+  {% if blog_post.related_blog_posts is defined and (blog_post.related_blog_posts | length > 0) %}
+    <!-- BLOG CARDS START -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 p-3">
+          <hr>
+          <h3>Related posts</h3>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="card mb-3">
-          <img src="https://via.placeholder.com/414x227" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Blog title</h5>
-            <p class="card-text">Blog short description..</p>
-            <p class="card-text"><small class="text-muted">Posted: 3 mins ago</small></p>
-            <a href="blog-single.html" class="btn btn-primary stretched-link">Read more</a>
-            <hr>
-            <span class="pe-2">Tags:</span>
-            <span class="badge bg-secondary">Pimcore</span>
-            <span class="badge bg-secondary">Blog</span>
-            <span class="badge bg-secondary">Example</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card mb-3">
-          <img src="https://via.placeholder.com/414x227" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Blog title</h5>
-            <p class="card-text">Blog short description..</p>
-            <p class="card-text"><small class="text-muted">Posted: 3 mins ago</small></p>
-            <a href="blog-single.html" class="btn btn-primary stretched-link">Read more</a>
-            <hr>
-            <span class="pe-2">Tags:</span>
-            <span class="badge bg-secondary">Pimcore</span>
-            <span class="badge bg-secondary">Blog</span>
-            <span class="badge bg-secondary">Example</span>
-          </div>
-        </div>
+        {% include '_partials/blog_card.html.twig' with {blog_posts: blog_post.related_blog_posts} %}
       </div>
     </div>
-  </div>
-  <!-- BLOG CARDS END -->
+    <!-- BLOG CARDS END -->
+  {% endif %}
 {% endblock %}
 
 {% block PAGE_JS %}
