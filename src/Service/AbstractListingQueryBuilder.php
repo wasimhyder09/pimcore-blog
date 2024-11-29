@@ -29,7 +29,7 @@ abstract class AbstractListingQueryBuilder {
         call_user_func([$this, $method], $value);
       }
 
-      $this->addQueryAfter()
+      $this->addQueryAfter();
 
     });
   }
@@ -81,8 +81,9 @@ abstract class AbstractListingQueryBuilder {
     }
   }
 
-  protected function addQueryAfter() {
-  }
   protected function addQueryBefore() {
+  }
+
+  protected function addQueryAfter() {
   }
 }
