@@ -25,7 +25,7 @@ class ContactFormType extends AbstractType {
         'constraints' => [
           new NotBlank(),
           new Email([
-            'node' => 'strict'
+            'mode' => 'strict'
           ])
         ]
       ])

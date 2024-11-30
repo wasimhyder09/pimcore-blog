@@ -1,7 +1,5 @@
 imports:
     - { resource: 'local/' }
-
-
 pimcore:
 
 # IMPORTANT Notice!
@@ -100,6 +98,10 @@ pimcore:
 
 #### SYMFONY OVERRIDES
 framework:
+    mailer:
+        transports:
+            main: '%env(MAILER_DSN)%'
+            pimcore_newsletter: '%env(MAILER_DSN)%'
 
 #### DEFINE LOCATION OF MANIFEST WHEN WORKING WITH SYMFONY ENCORE
 #    assets:
