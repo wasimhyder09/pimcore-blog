@@ -23,7 +23,7 @@ pimcore:
         error_pages:
             default: ''
             localized:
-                en: ''
+                en: /error
                 de: ''
                 fr: ''
     objects:

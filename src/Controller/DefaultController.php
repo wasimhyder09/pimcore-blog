@@ -22,4 +22,8 @@ class DefaultController extends FrontendController {
   public function footerAction(Request $request): array {
     return [];
   }
+
+  public function errorAction(Request $request): array {
+    return [];
+  }
 }
