@@ -82,6 +82,19 @@ services:
     App\Subscriber\:
         resource: '../src/Subscriber'
 
+    # SITEMAPS
+    App\Sitemaps\Processor\BlogPostImageProcessor: ~
+
+    App\Sitemaps\BlogPostGenerator:
+        arguments:
+            $filters:
+                - '@Pimcore\Bundle\SeoBundle\Sitemap\Element\Filter\PublishedFilter'
+                - '@Pimcore\Bundle\SeoBundle\Sitemap\Element\Filter\PropertiesFilter'
+            $processors:
+                - '@Pimcore\Bundle\SeoBundle\Sitemap\Element\Processor\ModificationDateProcessor'
+                - '@Pimcore\Bundle\SeoBundle\Sitemap\Element\Processor\PropertiesProcessor'
+                - '@App\Sitemaps\Processor\BlogPostImageProcessor'
+
     # Example custom templating helper
     # App\Templating\Helper\Example:
     #     # templating helpers need to be public as they
